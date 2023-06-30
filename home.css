@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* background-color: black; */
+    background-color: #0d0d0e;    
+}
+
+:root {
+    --neon: hsl(318, 71%, 50%);
+    --focus: hsl(318, 71%, 40%);
+    --logo: hsl(236, 75%, 47%);
+    --nav: #111113;
+    --white: white;
+    --background: #0d0d0e;
+    --text: #00abf0;
+    --temp: #cbd627;
+    --btn: #081b29;
+}
+
+body {
+    color: var(--white);
+    margin: 0;
+    overflow: hidden;
+}
+
+a {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--white);
+    text-decoration: none;
+    background: none;
+
+}
+
+.home {
+    position: absolute;
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, red, blue);
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    /* background: inherit; */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 80px;
+    margin-top: 4px;
+}
+
+.logo {
+    margin-left: 50px;
+    /* background-image: url('data:image/svg+xml,M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z') top left no-repeat; */
+    background-size: 100px 100px;
+    width: 25px;
+    height: 25px;
+    display: block;
+    color: var(--logo); 
+    filter: hue-rotate(90deg);
+    background: inherit;  
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 1%;
+    width: 100%;
+    height: 60px;
+    background-color: var(--nav);
+    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 0 0 0; */
+}
+
+.buttons {
+    letter-spacing: 1.5px;    
+    background: none;
+}
+
+.login {
+    margin-right: 20px;
+    padding: 6px; 
+}
+
+.sign-up {
+    margin-top: 5px;
+    margin-right: 50px;
+    margin-left: 20px;
+    padding: 6px;
+    background-color: var(--neon);
+}
+
+a {
+    position: relative;
+    display: inline-block;
+    font-weight: 550;
+    font-size: 0.9rem;
+    overflow: hidden;
+    transition: .5s;
+    border-radius: 3px;
+}
+
+.sign-up:hover {
+    background-color: var(--neon);
+    color: black;
+    box-shadow: 0 0 5px hsl(318, 71%, 50%),
+                0 0 25px hsl(318, 71%, 50%),
+                0 0 50px hsl(318, 71%, 50),
+                0 0 200px hsl(318, 71%, 50);
+    -webkit-box-flex: below 1px linear-gradient(transparent, #0005);
+}
+
+.sign-up:focus {
+    background-color: var(--focus);
+}
+
+.login:hover {
+    background-color: var(--neon);
+    color: black;
+    box-shadow: 0 0 5px hsl(318, 71%, 50%),
+                0 0 25px hsl(318, 71%, 50%),
+                0 0 50px hsl(318, 71%, 50),
+                0 0 200px hsl(318, 71%, 50);
+    -webkit-box-flex: below 1px linear-gradient(transparent, #0005);
+}
+
+.login:focus {
+    background-color: var(--focus);
+}
+/* a:first-child {
+    filter: hue-rotate(90deg)
+} */
+
+a span {
+    position: absolute;
+    display: block; 
+}
+
+a span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--neon));
+    animation: animate1 1s infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+a span:nth-child(2) {
+    top: -100;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--neon));
+    animation: animate2 1s infinite;
+    animation-delay: .25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+a span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(270deg, transparent, var(--neon));
+    animation: animate3 1s infinite;
+    animation-delay: .6s;
+}
+
+@keyframes animate3 {   
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+a span:nth-child(4) {
+    bottom: -100;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--neon));
+    animation: animate4 1s infinite;
+    animation-delay: .75s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+    100% {
+        bottom: 100%;
+    }
+}
+
+.body {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.body-content {
+    /* background: var(--logo); */
+    max-width: 600px;
+}
+
+.body-content h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 100px;
+}
+
+.body-content h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.body-content p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    margin: 20px 0 30px;
+}
+
+.body-content .hire-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 345px;
+    height: 50px;
+    /* background: var(--temp); */
+}
+
+.hire-buttons a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: var(--text);
+    border: 2px solid var(--text);
+    border-radius: 8px;
+    font-size: 20px;
+    color: var(--btn);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.hire-buttons a:nth-child(2) {
+    background: none;
+    color: var(--text);
+}
+
+.hire-buttons a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--logo);
+    z-index: -1;
+    transition: .5s;
+}
+
+.hire-buttons a:hover::before {
+    width: 100%;
+}
