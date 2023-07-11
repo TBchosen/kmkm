@@ -16,7 +16,10 @@
     --nav: #111113;
     --white: white;
     --background: #0d0d0e;
+    /* --text: rgb(34, 34, 214); */
     --text: #00abf0;
+    --blue: blue;
+    --text-hover: hsl(197, 80%, 60%);
     --temp: #cbd627;
     --btn: #081b29;
 }
@@ -65,7 +68,7 @@ a {
     display: block;
     color: var(--logo); 
     filter: hue-rotate(90deg);
-    background: inherit;  
+    /* background: inherit;   */
 }
 
 nav {
@@ -267,7 +270,7 @@ a span:nth-child(4) {
     align-items: center;
     width: 150px;
     height: 100%;
-    background: var(--text);
+    /* background: var(--text); */
     border: 2px solid var(--text);
     border-radius: 8px;
     font-size: 20px;
@@ -278,23 +281,106 @@ a span:nth-child(4) {
     z-index: 1;
 }
 
+.hire-buttons a:nth-child(1) {
+    background: var(--text);
+    color: var(--background);
+}
+
 .hire-buttons a:nth-child(2) {
     background: none;
     color: var(--text);
 }
 
-.hire-buttons a::before {
+.hire-buttons a:nth-child(2):before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 0;
     height: 100%;
-    background: var(--logo);
+    background: var(--text);
+    z-index: -1;
+    transition: .5s;
+}
+
+.hire-buttons a:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--background);
     z-index: -1;
     transition: .5s;
 }
 
 .hire-buttons a:hover::before {
     width: 100%;
+}
+
+.hire-buttons a:nth-child(2):hover {
+    color: var(--background);
+}
+
+.hire-buttons a:nth-child(1):hover {
+    color: var(--text);
+}
+
+.socials-container {
+    position: absolute;
+    max-width: 200px;   
+    bottom: 40px;
+    width: 170px;
+    color: var(--text);
+    /* background: var(--temp); */
+    display: flex;
+    justify-content: space-between;
+}
+
+.socials-container a {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    padding: 3px;
+    background: transparent;
+    border: 2px solid var(--text);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 5px;
+    color: var(--text);
+    z-index: 1;
+}
+
+.socials-container a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--text);
+    transition: .5s;
+    z-index: -1;
+}
+
+.socials-container a:hover::before {
+    width: 100%;
+}
+
+.socials-container:hover {
+    color: var(--background);
+}
+
+.pop {
+    position: absolute;
+    cursor: pointer;
+    top: 360px;
+    /* bottom: 230px; */
+    left: 45px;
+    width: 580px;
+    height: 12%;
+    border: 2px solid red;
+    background: transparent;
 }
